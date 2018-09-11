@@ -1,0 +1,106 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.Grille {
+  display: flex;
+}
+
+.Grille-ul {
+  display: grid;
+  background-color: white;
+  grid-template-columns: 30% 30% 30%;
+  margin-left: 10%;
+  padding: 0;
+  width: 600px;
+}
+
+.Grille-ul > li {
+  background-color: white;
+  border: 3px solid;
+  list-style: none;
+  height: 150px;
+  display: flex;
+  cursor: pointer;
+}
+.Grille-ul > li  > p {
+  font-size: 60px;
+  margin: auto;
+
+}
+.Grille-ul > li:hover {
+  border-color: red;
+}
+
+.actif {
+  color:red;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+}
+.Joueur {
+  display: flex;
+  justify-content: space-around;
+}
+.Joueur > p {
+  font-size: 30px;
+}
+.info > p{
+  font-size: 40px;
+  margin: 0;
+  text-align: center;
+}
+.info > ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+.info > ul > li > p {
+  font-size: 30px;
+}
+
+button {
+  font-size: 30px;
+  display: none;
+}
+.block {
+  display: block;
+}
+h1 {
+  text-align: center;
+  color: red;
+  display: none;
+}
+
+.Principal {
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-top: 30vh;
+}
+
+.Principal > button , h1 {
+  display: block;
+}
+.Principal > button {
+  margin: auto;
+}
+.Principal > button > a  {
+padding-left: 1em;
+padding-right: 1em;
+text-decoration: none;
+color: black;
+}
+.Principal > h1 {
+  color: black;
+}
+
+.victoire {
+  background-color:green !important;
+}
