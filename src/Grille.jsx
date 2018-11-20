@@ -4,15 +4,16 @@ import chunk from "lodash/chunk";
 import some from "lodash/some";
 import every from "lodash/every";
 
-export default class Grille extends Component{
+export default class Grille extends Component{                                                                                  //Met des valeurs par default dans le state
   state = {
-    symbol: "X",
-    players: [
+    symbol: "X",                                                                                                                   //symbol debut de la partie c'est X
+                                                                                                                         //Nombre de coup par joueur
+  players: [
       0,
       0
     ],
-    cases: (new Array(9)).fill(null),
-    playing: false,
+    cases: (new Array(9)).fill(null),         //cree un tableau avec 9 objet dedans qui sont egaux à null
+    playing: false,                             // score egal à 0 pour les deux joueurs
     score: [
       0,
       0
@@ -23,12 +24,12 @@ export default class Grille extends Component{
   componentDidUpdate () {
     const { cases, symbol, playing, score } = this.state;
 
-    if (playing) {
+    if (playing) {                                                  // Si en jeux le chrono va à 0
       setTimeout(() => {
-        if (this.checkWin()) {
+        if (this.checkWin()) {                                        // 0 que la victoire ou qu'il y a victoire
           this.setState({
-            playing: false,
-            score: [symbol === "O" ? score[1]+1 : score[1], symbol === "X" ? score[0]+1 : score[0]]
+            playing: false,                                               // alors partie s'arrete
+            score: [symbol === "O" ? score[1]+1 : score[1], symbol === "X" ? score[0]+1 : score[0]] // Chriffre chrono
           });
         } else if (every(cases)) {
           this.setState({
@@ -88,6 +89,8 @@ export default class Grille extends Component{
 
     return some(lines) || some(columns)|| some(diagonales);
   }
+
+// _________________________
 
   replay(){
     const { symbol , cases , players } = this.state;
